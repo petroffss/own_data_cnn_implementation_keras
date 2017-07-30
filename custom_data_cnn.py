@@ -309,7 +309,7 @@ print (feature_maps.shape)
 
 fig=plt.figure(figsize=(16,16))
 plt.imshow(feature_maps[:,:,filter_num],cmap='gray')
-plt.savefig("featuremaps-layer-{}".format(layer_num) + "-filternum-{}".format(filter_num)+'.jpg')
+plt.savefig("featuremaps-layer-{}".format(layer_num) + "-filternum-{}".format(filter_num)+'.png')
 
 num_of_featuremaps=feature_maps.shape[2]
 fig=plt.figure(figsize=(16,16))	
@@ -323,7 +323,7 @@ for i in range(int(num_of_featuremaps)):
 	plt.yticks([])
 	plt.tight_layout()
 plt.show()
-fig.savefig("featuremaps-layer-{}".format(layer_num) + '.jpg')
+fig.savefig("featuremaps-layer-{}".format(layer_num) + '.png')
 
 #%%
 # Printing the confusion matrix
