@@ -172,8 +172,10 @@ model.add(Activation('softmax'))
 
 #sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 #model.compile(loss='categorical_crossentropy', optimizer=sgd,metrics=["accuracy"])
-model.compile(loss='categorical_crossentropy', optimizer='rmsprop',metrics=["accuracy"])
-
+#model.compile(loss='categorical_crossentropy', optimizer='rmsprop',metrics=["accuracy"])
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
 # Viewing model_configuration
 
 model.summary()
@@ -241,7 +243,7 @@ plt.style.use(['classic'])
 
 # Evaluating the model
 
-score = model.evaluate(X_test, y_test, show_accuracy=True, verbose=0)
+score = model.evaluate(X_test, y_test, verbose=0)
 print('Test Loss:', score[0])
 print('Test accuracy:', score[1])
 
