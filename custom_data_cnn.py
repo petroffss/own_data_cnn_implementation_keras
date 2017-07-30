@@ -40,7 +40,9 @@ img_data_list=[]
 for dataset in data_dir_list:
 	img_list=os.listdir(data_path+'/'+ dataset)
 	print ('Loaded the images of dataset-'+'{}\n'.format(dataset))
-	for img in img_list:
+	except NotADirectoryError: # for mac OS Siera
+        pass
+for img in img_list:
 		input_img=cv2.imread(data_path + '/'+ dataset + '/'+ img )
 		input_img=cv2.cvtColor(input_img, cv2.COLOR_BGR2GRAY)
 		input_img_resize=cv2.resize(input_img,(128,128))
